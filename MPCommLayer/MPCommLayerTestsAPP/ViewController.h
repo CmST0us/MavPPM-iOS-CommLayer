@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
+#import <MPCommLayer/MPCommunicatorServiceDelegate.h>
+@interface ViewController : UIViewController<MPCommunicatorServiceDelegate>
 
 
 @end

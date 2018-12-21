@@ -1,5 +1,5 @@
 //
-//  MPUDPConnection.h
+//  MPUDPServer.h
 //  MPCommLayer
 //
 //  Created by CmST0us on 2018/12/21.
@@ -11,11 +11,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MPUDPConnection : NSObject<MPCommunicatorServiceDelegate>
+@interface MPUDPServer : NSObject<MPCommunicatorServiceDelegate>
+
 @property (nonatomic, weak) id<MPCommunicatorServiceDelegate> delegate;
 
-- (instancetype)initWithRemoteHostName:(NSString *)hostname
-                                  port:(uint16_t)port;
+- (instancetype)initWithListenPort:(uint16_t)port;
+
+- (void)setRemoteClientAddress:(NSString *)address
+                          port:(uint16_t)port;
+
 - (BOOL)start;
 
 - (BOOL)pause;
