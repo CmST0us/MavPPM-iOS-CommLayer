@@ -18,6 +18,7 @@
 		4FDD26F221CC06790016D538 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD26F121CC06790016D538 /* main.m */; };
 		4FDD26F621CC06B10016D538 /* MPCommLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDD26BC21CBF9B70016D538 /* MPCommLayer.framework */; };
 		4FDD26F721CC06B10016D538 /* MPCommLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDD26BC21CBF9B70016D538 /* MPCommLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4FDD271421CCD84D0016D538 /* libSocketKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDD271221CCCBB70016D538 /* libSocketKit.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4FDD26BB21CBF9B70016D538;
 			remoteInfo = MPCommLayer;
+		};
+		4FDD271121CCCBB70016D538 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FDD270A21CCCBB70016D538 /* socket_kit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D8639E5CD4834707A2AB150B;
+			remoteInfo = SocketKit;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -60,6 +68,7 @@
 		4FDD26EE21CC06790016D538 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4FDD26F021CC06790016D538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FDD26F121CC06790016D538 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4FDD270A21CCCBB70016D538 /* socket_kit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = socket_kit.xcodeproj; path = ../../Vendor/SocketKit/build/socket_kit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FDD271421CCD84D0016D538 /* libSocketKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +94,7 @@
 		4FDD26B221CBF9B70016D538 = {
 			isa = PBXGroup;
 			children = (
+				4FDD270A21CCCBB70016D538 /* socket_kit.xcodeproj */,
 				4FDD26BE21CBF9B70016D538 /* MPCommLayer */,
 				4FDD26E121CC06790016D538 /* MPCommLayerTestsAPP */,
 				4FDD26BD21CBF9B70016D538 /* Products */,
@@ -132,6 +143,14 @@
 				4FDD26F121CC06790016D538 /* main.m */,
 			);
 			path = MPCommLayerTestsAPP;
+			sourceTree = "<group>";
+		};
+		4FDD270B21CCCBB70016D538 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4FDD271221CCCBB70016D538 /* libSocketKit.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +233,12 @@
 			mainGroup = 4FDD26B221CBF9B70016D538;
 			productRefGroup = 4FDD26BD21CBF9B70016D538 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4FDD270B21CCCBB70016D538 /* Products */;
+					ProjectRef = 4FDD270A21CCCBB70016D538 /* socket_kit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				4FDD26BB21CBF9B70016D538 /* MPCommLayer */,
@@ -221,6 +246,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4FDD271221CCCBB70016D538 /* libSocketKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSocketKit.a;
+			remoteRef = 4FDD271121CCCBB70016D538 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4FDD26BA21CBF9B70016D538 /* Resources */ = {
@@ -428,8 +463,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "${PROJECT_DIR}/../../Vendor/build/lib";
-				OTHER_LDFLAGS = "-lSocketKit";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eric3u.MPCommLayer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -456,8 +491,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = "${PROJECT_DIR}/../../Vendor/build/lib";
-				OTHER_LDFLAGS = "-lSocketKit";
+				LIBRARY_SEARCH_PATHS = "";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.eric3u.MPCommLayer;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
