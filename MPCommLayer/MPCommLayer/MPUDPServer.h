@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MPUDPServer : NSObject<MPCommunicatorServiceDelegate>
+@interface MPUDPServer : NSObject
 
 @property (nonatomic, weak) id<MPCommunicatorServiceDelegate> delegate;
 

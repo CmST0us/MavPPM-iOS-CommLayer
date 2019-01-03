@@ -30,7 +30,10 @@ struct MPUDPServer_Delegate : public ts::CommunicatorServiceDelegate {
             NSString *addressString = [[NSString alloc] initWithCString:address.getIpPortPairString().c_str() encoding:NSUTF8StringEncoding];
             NSURL *remoteURL = [NSURL URLWithString:addressString];
             NSData *d = [[NSData alloc] initWithBytes:(const void *)data length:len];
-            [ctx service:ctx didReadData:d fromRemote:remoteURL];
+            if (ctx.delegate != NULL &&
+                [ctx.delegate respondsToSelector:@selector(service:didReadData:fromRemote:)]) {
+                [ctx.delegate service:ctx didReadData:d fromRemote:remoteURL];
+            }
         }
     };
     
@@ -86,13 +89,6 @@ struct MPUDPServer_Delegate : public ts::CommunicatorServiceDelegate {
 - (void)dealloc {
     [self close];
     delete _server;
-}
-
-#pragma mark - Delegate
-- (void)service:(id)service didReadData:(NSData *)data fromRemote:(NSURL *)remote {
-    if (self.delegate && [self.delegate respondsToSelector:@selector(service:didReadData:fromRemote:)]) {
-        [self.delegate service:service didReadData:data fromRemote:remote];
-    }
 }
 
 @end

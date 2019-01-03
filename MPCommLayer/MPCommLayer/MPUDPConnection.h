@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MPUDPConnection : NSObject<MPCommunicatorServiceDelegate>
+@interface MPUDPConnection : NSObject
 @property (nonatomic, weak) id<MPCommunicatorServiceDelegate> delegate;
 
 - (instancetype)initWithRemoteHostName:(NSString *)hostname
