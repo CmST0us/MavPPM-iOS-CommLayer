@@ -44,6 +44,10 @@ struct MPUDPServer_Delegate : public ts::CommunicatorServiceDelegate {
     std::shared_ptr<MPUDPServer_Delegate> _warp_delegate;
 }
 
+- (instancetype)init {
+    return [self initWithListenPort:0];
+}
+
 - (instancetype)initWithListenPort:(uint16_t)port {
     self = [super init];
     if (self) {
