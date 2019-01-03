@@ -14,6 +14,7 @@ FOUNDATION_EXPORT double MPCommLayerVersionNumber;
 //! Project version string for MPCommLayer.
 FOUNDATION_EXPORT const unsigned char MPCommLayerVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <MPCommLayer/PublicHeader.h>
-
+#import <MPCommLayer/MPUDPConnection.h>
+#import <MPCommLayer/MPUDPServer.h>
+#import <MPCommLayer/MPCommunicatorServiceDelegate.h>
 
