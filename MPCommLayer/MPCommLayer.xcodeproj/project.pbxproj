@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F22819121E472AD00B08C5B /* libSocketKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDD271221CCCBB70016D538 /* libSocketKit.a */; };
 		4FDD26C121CBF9B70016D538 /* MPCommLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FDD26BF21CBF9B70016D538 /* MPCommLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FDD26D621CBFC5B0016D538 /* MPUDPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FDD26D421CBFC5B0016D538 /* MPUDPConnection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FDD26D721CBFC5B0016D538 /* MPUDPConnection.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD26D521CBFC5B0016D538 /* MPUDPConnection.mm */; };
@@ -18,7 +19,6 @@
 		4FDD26F221CC06790016D538 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD26F121CC06790016D538 /* main.m */; };
 		4FDD26F621CC06B10016D538 /* MPCommLayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDD26BC21CBF9B70016D538 /* MPCommLayer.framework */; };
 		4FDD26F721CC06B10016D538 /* MPCommLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDD26BC21CBF9B70016D538 /* MPCommLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4FDD271421CCD84D0016D538 /* libSocketKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDD271221CCCBB70016D538 /* libSocketKit.a */; };
 		4FDD271821CCD9770016D538 /* MPCommunicatorServiceDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FDD271721CCD9770016D538 /* MPCommunicatorServiceDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FDD271F21CCDC440016D538 /* MPUDPServer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FDD271D21CCDC440016D538 /* MPUDPServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FDD272021CCDC440016D538 /* MPUDPServer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD271E21CCDC440016D538 /* MPUDPServer.mm */; };
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FDD271421CCD84D0016D538 /* libSocketKit.a in Frameworks */,
+				4F22819121E472AD00B08C5B /* libSocketKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
