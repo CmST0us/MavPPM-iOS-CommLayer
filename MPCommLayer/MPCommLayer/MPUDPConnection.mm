@@ -13,7 +13,7 @@
 using namespace std;
 
 
-struct MPUDPConnection_Delegate : public ts::CommunicatorServiceDelegate {
+struct MPUDPConnection_Delegate : public socketkit::CommunicatorServiceDelegate {
     MPUDPConnection_Delegate() {
         this->context = NULL;
     };
@@ -24,7 +24,7 @@ struct MPUDPConnection_Delegate : public ts::CommunicatorServiceDelegate {
     
     void *context;
     
-    virtual void serviceDidReadData(ts::SocketAddress address, uchar *data, int len, std::shared_ptr<ts::CommunicatorService> service) {
+    virtual void serviceDidReadData(socketkit::SocketAddress address, uchar *data, int len, std::shared_ptr<socketkit::CommunicatorService> service) {
         @autoreleasepool {
             if (this->context == NULL) {
                 return;
@@ -43,7 +43,7 @@ struct MPUDPConnection_Delegate : public ts::CommunicatorServiceDelegate {
 };
 
 @implementation MPUDPConnection {
-    ts::UDPConnection *_connection;
+    socketkit::UDPConnection *_connection;
     std::shared_ptr<MPUDPConnection_Delegate> _warp_delegate;
 }
 
@@ -51,7 +51,7 @@ struct MPUDPConnection_Delegate : public ts::CommunicatorServiceDelegate {
     self = [super init];
     if (self) {
         std::string hostnameString([hostname cStringUsingEncoding:NSUTF8StringEncoding]);
-        _connection = new ts::UDPConnection(hostnameString, port);
+        _connection = new socketkit::UDPConnection(hostnameString, port);
         if (_connection == nullptr) {
             return NULL;
         }

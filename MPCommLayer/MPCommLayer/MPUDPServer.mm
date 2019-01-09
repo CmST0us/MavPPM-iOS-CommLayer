@@ -10,7 +10,7 @@
 #import "MPUDPServer.h"
 
 using namespace std;
-struct MPUDPServer_Delegate : public ts::CommunicatorServiceDelegate {
+struct MPUDPServer_Delegate : public socketkit::CommunicatorServiceDelegate {
     MPUDPServer_Delegate() {
         this->context = NULL;
     };
@@ -21,7 +21,7 @@ struct MPUDPServer_Delegate : public ts::CommunicatorServiceDelegate {
     
     void *context;
     
-    virtual void serviceDidReadData(ts::SocketAddress address, uchar *data, int len, std::shared_ptr<ts::CommunicatorService> service) {
+    virtual void serviceDidReadData(socketkit::SocketAddress address, uchar *data, int len, std::shared_ptr<socketkit::CommunicatorService> service) {
         @autoreleasepool {
             if (this->context == NULL) {
                 return;
@@ -40,7 +40,7 @@ struct MPUDPServer_Delegate : public ts::CommunicatorServiceDelegate {
 };
 
 @implementation MPUDPServer {
-    ts::UDPServer *_server;
+    socketkit::UDPServer *_server;
     std::shared_ptr<MPUDPServer_Delegate> _warp_delegate;
 }
 
@@ -51,7 +51,7 @@ struct MPUDPServer_Delegate : public ts::CommunicatorServiceDelegate {
 - (instancetype)initWithListenPort:(uint16_t)port {
     self = [super init];
     if (self) {
-        _server = new ts::UDPServer(port);
+        _server = new socketkit::UDPServer(port);
         if (_server == nullptr) {
             return NULL;
         }
@@ -65,7 +65,7 @@ struct MPUDPServer_Delegate : public ts::CommunicatorServiceDelegate {
 
 - (void)setRemoteClientAddress:(NSString *)address port:(uint16_t)port {
     string s = [address cStringUsingEncoding:NSUTF8StringEncoding];
-    ts::SocketAddress clientRemoteAddress(s, port);
+    socketkit::SocketAddress clientRemoteAddress(s, port);
     clientRemoteAddress.startResolveHost();
     _server->mClientAddress = clientRemoteAddress;
 }
