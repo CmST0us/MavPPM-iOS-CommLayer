@@ -7,38 +7,37 @@
 //
 
 #import "ViewController.h"
-#import <MPCommLayer/MPUDPServer.h>
 
 @interface ViewController ()
-@property (nonatomic, strong) MPUDPServer *server;
-@property (nonatomic, assign) BOOL isFindRemoteClientAddress;
+@property (nonatomic, strong) MPUDPSocket *socket;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.server = [[MPUDPServer alloc] initWithListenPort:12001];
-    self.server.delegate = self;
-    [self.server start];
     
-    self.isFindRemoteClientAddress = NO;
+    self.socket = [[MPUDPSocket alloc] initWithLocalPort:14560 delegate:self];
+    [self.socket connect:@"127.0.0.1" port:14561];
+    
+    [self.socket write:[@"hello" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+//    __weak typeof(self) weakSelf = self;
+//    [NSTimer scheduledTimerWithTimeInterval:5 repeats:NO block:^(NSTimer * _Nonnull timer) {
+//        weakSelf.socket = NULL;
+//    }];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-
-- (void)service:(id)service didReadData:(NSData *)data fromRemote:(NSURL *)remote {
-    if (self.isFindRemoteClientAddress == NO) {
-        NSString *clientString = [remote absoluteString];
-        NSString *clientIpString = [clientString componentsSeparatedByString:@":"][0];
-        NSString *clientPortString = [clientString componentsSeparatedByString:@":"][1];
-        [self.server setRemoteClientAddress:clientIpString port:[clientPortString intValue]];
-        self.isFindRemoteClientAddress = YES;
-    }
-    
-    
+- (void)communicator:(id)aCommunicator didReadData:(NSData *)data {
     NSString *s = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog(@"\nRECV: %@\nFROM: %@", s, [remote absoluteString]);
+    NSLog(@"recv: %@", s);
+    [aCommunicator write:data];
 }
 
+- (void)communicator:(id)aCommunicator handleEvent:(MPCommEvent)event {
+    if (event == MPCommEventHasBytesAvailable) {
+        [aCommunicator read];
+    }
+}
 @end
