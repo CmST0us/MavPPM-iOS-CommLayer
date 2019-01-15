@@ -32,9 +32,13 @@ using namespace socketkit;
                          delegate:(id<MPCommDelegate>)delegate{
     self = [super init];
     if (self) {
-        _socket = std::unique_ptr<UDPSocket>(new UDPSocket(localPort));
-        self.delegate = delegate;
-        _socket->getRunloop()->run();
+        try {
+            _socket = std::unique_ptr<UDPSocket>(new UDPSocket(localPort));
+            self.delegate = delegate;
+            _socket->getRunloop()->run();
+        } catch (SocketException e) {
+            throw e;
+        }
     }
     return self;
 }

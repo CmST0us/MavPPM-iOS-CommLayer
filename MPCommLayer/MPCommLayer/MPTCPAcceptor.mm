@@ -28,9 +28,13 @@ using namespace socketkit;
 - (instancetype)initWithDelegate:(id<MPCommTCPAcceptorDelegate>)delegate {
     self = [super init];
     if (self) {
-        _acceptor = std::unique_ptr<TCPAcceptor>(new TCPAcceptor());
-        self.delegate = delegate;
-        _acceptor->getRunloop()->run();
+        try {
+            _acceptor = std::unique_ptr<TCPAcceptor>(new TCPAcceptor());
+            self.delegate = delegate;
+            _acceptor->getRunloop()->run();
+        } catch (SocketException e) {
+            throw e;
+        }
     }
     return self;
 }
