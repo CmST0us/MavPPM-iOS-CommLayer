@@ -14,7 +14,7 @@
 		4F2281B621ECE8BB00B08C5B /* MPCommDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2281B521ECE8BB00B08C5B /* MPCommDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F2281C321EDAC2F00B08C5B /* MPTCPAcceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2281C121EDAC2F00B08C5B /* MPTCPAcceptor.h */; };
 		4F2281C421EDAC2F00B08C5B /* MPTCPAcceptor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F2281C221EDAC2F00B08C5B /* MPTCPAcceptor.mm */; };
-		4F2281C621EDB6F100B08C5B /* libSocketKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDD271221CCCBB70016D538 /* libSocketKit.a */; };
+		4FBCCDD021EDD5D700E7BF3C /* libSocketKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDD271221CCCBB70016D538 /* libSocketKit.a */; };
 		4FDD26C121CBF9B70016D538 /* MPCommLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FDD26BF21CBF9B70016D538 /* MPCommLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FDD26E421CC06790016D538 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD26E321CC06790016D538 /* AppDelegate.m */; };
 		4FDD26E721CC06790016D538 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD26E621CC06790016D538 /* ViewController.m */; };
@@ -86,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F2281C621EDB6F100B08C5B /* libSocketKit.a in Frameworks */,
+				4FBCCDD021EDD5D700E7BF3C /* libSocketKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
