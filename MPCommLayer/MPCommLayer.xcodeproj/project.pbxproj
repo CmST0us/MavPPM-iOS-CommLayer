@@ -12,7 +12,9 @@
 		4F2281B321ECE6CA00B08C5B /* MPUDPSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2281B121ECE6CA00B08C5B /* MPUDPSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F2281B421ECE6CA00B08C5B /* MPUDPSocket.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F2281B221ECE6CA00B08C5B /* MPUDPSocket.mm */; };
 		4F2281B621ECE8BB00B08C5B /* MPCommDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2281B521ECE8BB00B08C5B /* MPCommDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4F2281C021EDA99400B08C5B /* libSocketKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDD271221CCCBB70016D538 /* libSocketKit.a */; };
+		4F2281C321EDAC2F00B08C5B /* MPTCPAcceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2281C121EDAC2F00B08C5B /* MPTCPAcceptor.h */; };
+		4F2281C421EDAC2F00B08C5B /* MPTCPAcceptor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F2281C221EDAC2F00B08C5B /* MPTCPAcceptor.mm */; };
+		4F2281C621EDB6F100B08C5B /* libSocketKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDD271221CCCBB70016D538 /* libSocketKit.a */; };
 		4FDD26C121CBF9B70016D538 /* MPCommLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FDD26BF21CBF9B70016D538 /* MPCommLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FDD26E421CC06790016D538 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD26E321CC06790016D538 /* AppDelegate.m */; };
 		4FDD26E721CC06790016D538 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD26E621CC06790016D538 /* ViewController.m */; };
@@ -61,6 +63,8 @@
 		4F2281B121ECE6CA00B08C5B /* MPUDPSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPUDPSocket.h; sourceTree = "<group>"; };
 		4F2281B221ECE6CA00B08C5B /* MPUDPSocket.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MPUDPSocket.mm; sourceTree = "<group>"; };
 		4F2281B521ECE8BB00B08C5B /* MPCommDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCommDelegate.h; sourceTree = "<group>"; };
+		4F2281C121EDAC2F00B08C5B /* MPTCPAcceptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPTCPAcceptor.h; sourceTree = "<group>"; };
+		4F2281C221EDAC2F00B08C5B /* MPTCPAcceptor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MPTCPAcceptor.mm; sourceTree = "<group>"; };
 		4FDD26BC21CBF9B70016D538 /* MPCommLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MPCommLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FDD26BF21CBF9B70016D538 /* MPCommLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCommLayer.h; sourceTree = "<group>"; };
 		4FDD26C021CBF9B70016D538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -82,7 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F2281C021EDA99400B08C5B /* libSocketKit.a in Frameworks */,
+				4F2281C621EDB6F100B08C5B /* libSocketKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +127,8 @@
 				4FDD26BF21CBF9B70016D538 /* MPCommLayer.h */,
 				4FDD26C021CBF9B70016D538 /* Info.plist */,
 				4F2281B521ECE8BB00B08C5B /* MPCommDelegate.h */,
+				4F2281C121EDAC2F00B08C5B /* MPTCPAcceptor.h */,
+				4F2281C221EDAC2F00B08C5B /* MPTCPAcceptor.mm */,
 				4F2281A921ECE6BF00B08C5B /* MPTCPSocket.h */,
 				4F2281AA21ECE6BF00B08C5B /* MPTCPSocket.mm */,
 				4F2281B121ECE6CA00B08C5B /* MPUDPSocket.h */,
@@ -169,6 +175,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F2281C321EDAC2F00B08C5B /* MPTCPAcceptor.h in Headers */,
 				4FDD26C121CBF9B70016D538 /* MPCommLayer.h in Headers */,
 				4F2281B321ECE6CA00B08C5B /* MPUDPSocket.h in Headers */,
 				4F2281B621ECE8BB00B08C5B /* MPCommDelegate.h in Headers */,
@@ -295,6 +302,7 @@
 			files = (
 				4F2281AC21ECE6BF00B08C5B /* MPTCPSocket.mm in Sources */,
 				4F2281B421ECE6CA00B08C5B /* MPUDPSocket.mm in Sources */,
+				4F2281C421EDAC2F00B08C5B /* MPTCPAcceptor.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
