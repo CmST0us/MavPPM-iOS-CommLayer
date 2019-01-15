@@ -10,6 +10,7 @@
 
 @interface ViewController ()
 @property (nonatomic, strong) MPUDPSocket *socket;
+@property (nonatomic, strong) MPTCPSocket *tcpSocket;
 @end
 
 @implementation ViewController
@@ -18,9 +19,12 @@
     [super viewDidLoad];
     
     self.socket = [[MPUDPSocket alloc] initWithLocalPort:14560 delegate:self];
-    [self.socket connect:@"127.0.0.1" port:14561];
+    self.tcpSocket = [[MPTCPSocket alloc] initWithDelegate:self];
     
+    [self.socket connect:@"127.0.0.1" port:14561];
     [self.socket write:[@"hello" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    [self.tcpSocket connect:@"127.0.0.1" port:12001];
     
 //    __weak typeof(self) weakSelf = self;
 //    [NSTimer scheduledTimerWithTimeInterval:5 repeats:NO block:^(NSTimer * _Nonnull timer) {
@@ -39,5 +43,21 @@
     if (event == MPCommEventHasBytesAvailable) {
         [aCommunicator read];
     }
+    if (event == MPCommEventOpenCompleted) {
+        if ([aCommunicator isEqual:self.tcpSocket]) {
+            
+            [self.tcpSocket write:[@"hello\n" dataUsingEncoding:NSUTF8StringEncoding]];
+        }
+    }
+    if (event == MPCommEventErrorOccurred) {
+        NSLog(@"error");
+    }
+    if (event == MPCommEventEndEncountered) {
+        if ([aCommunicator isEqual:self.tcpSocket]) {
+            
+        }
+        
+    }
 }
+
 @end
