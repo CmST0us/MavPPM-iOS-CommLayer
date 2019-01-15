@@ -73,17 +73,18 @@ using namespace socketkit;
 }
 
 - (void)write:(NSData *)data {
-    int size = (int)data.length;
-    _socket->write((uchar *)data.bytes, size);
+    auto writeData = std::make_shared<utils::Data>((int)data.length);
+    writeData->copy(data.bytes, (int)data.length);
+    _socket->write(writeData);
 }
 
 - (void)read {
     __weak typeof(self) weakSelf = self;
-    _socket->read([weakSelf](uchar *buffer, int size) {
+    _socket->read([weakSelf](std::shared_ptr<utils::Data> readData) {
         if (weakSelf.delegate &&
             [weakSelf.delegate respondsToSelector:@selector(communicator:didReadData:)]) {
-            if (size > 0) {
-                NSData *data = [[NSData alloc] initWithBytes:(const void *)buffer length:size];
+            if (readData->getDataSize() > 0) {
+                NSData *data = [[NSData alloc] initWithBytes:(const void *)readData->getDataAddress() length:readData->getDataSize()];
                 [weakSelf.delegate communicator:weakSelf didReadData:data];
             }
         }
