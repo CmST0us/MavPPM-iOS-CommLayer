@@ -15,10 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 @interface MPUDPSocket : NSObject
 @property (nonatomic, weak) id<MPCommDelegate> delegate;
 
-- (instancetype)initWithDelegate:(id<MPCommDelegate>)delegate;
+- (instancetype)initWithDelegate:(nullable id<MPCommDelegate>)delegate;
 
 - (instancetype)initWithLocalPort:(short)localPort
-                         delegate:(id<MPCommDelegate>)delegate NS_DESIGNATED_INITIALIZER;
+                         delegate:(nullable id<MPCommDelegate>)delegate NS_DESIGNATED_INITIALIZER;
 
 - (void)read;
 - (void)write:(NSData *)data;
