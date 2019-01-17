@@ -111,7 +111,7 @@ using namespace socketkit;
 
 - (void)read {
     __weak typeof(self) weakSelf = self;
-    _socket->read([weakSelf](std::shared_ptr<utils::Data> readData) {
+    _socket->read([weakSelf](ICommunicator *communicator, std::shared_ptr<utils::Data> readData) {
         if (weakSelf.delegate &&
             [weakSelf.delegate respondsToSelector:@selector(communicator:didReadData:)]) {
             if (readData->getDataSize() > 0) {
