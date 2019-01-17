@@ -17,4 +17,5 @@ FOUNDATION_EXPORT const unsigned char MPCommLayerVersionString[];
 #import <MPCommLayer/MPTCPSocket.h>
 #import <MPCommLayer/MPUDPSocket.h>
 #import <MPCommLayer/MPCommDelegate.h>
+#import <MPCommLayer/MPCommManager.h>
 

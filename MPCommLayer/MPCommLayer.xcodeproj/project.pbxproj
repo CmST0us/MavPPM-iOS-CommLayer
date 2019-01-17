@@ -15,6 +15,8 @@
 		4F2281C321EDAC2F00B08C5B /* MPTCPAcceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2281C121EDAC2F00B08C5B /* MPTCPAcceptor.h */; };
 		4F2281C421EDAC2F00B08C5B /* MPTCPAcceptor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F2281C221EDAC2F00B08C5B /* MPTCPAcceptor.mm */; };
 		4FBCCDF621F0719B00E7BF3C /* libSocketKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDD271221CCCBB70016D538 /* libSocketKit.a */; };
+		4FBCCE0221F0B2E800E7BF3C /* MPCommManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FBCCE0021F0B2E800E7BF3C /* MPCommManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4FBCCE0321F0B2E800E7BF3C /* MPCommManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCCE0121F0B2E800E7BF3C /* MPCommManager.mm */; };
 		4FDD26C121CBF9B70016D538 /* MPCommLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FDD26BF21CBF9B70016D538 /* MPCommLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FDD26E421CC06790016D538 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD26E321CC06790016D538 /* AppDelegate.m */; };
 		4FDD26E721CC06790016D538 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD26E621CC06790016D538 /* ViewController.m */; };
@@ -65,6 +67,8 @@
 		4F2281B521ECE8BB00B08C5B /* MPCommDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCommDelegate.h; sourceTree = "<group>"; };
 		4F2281C121EDAC2F00B08C5B /* MPTCPAcceptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPTCPAcceptor.h; sourceTree = "<group>"; };
 		4F2281C221EDAC2F00B08C5B /* MPTCPAcceptor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MPTCPAcceptor.mm; sourceTree = "<group>"; };
+		4FBCCE0021F0B2E800E7BF3C /* MPCommManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCommManager.h; sourceTree = "<group>"; };
+		4FBCCE0121F0B2E800E7BF3C /* MPCommManager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MPCommManager.mm; sourceTree = "<group>"; };
 		4FDD26BC21CBF9B70016D538 /* MPCommLayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MPCommLayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FDD26BF21CBF9B70016D538 /* MPCommLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPCommLayer.h; sourceTree = "<group>"; };
 		4FDD26C021CBF9B70016D538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				4FDD26BF21CBF9B70016D538 /* MPCommLayer.h */,
+				4FBCCE0021F0B2E800E7BF3C /* MPCommManager.h */,
+				4FBCCE0121F0B2E800E7BF3C /* MPCommManager.mm */,
 				4FDD26C021CBF9B70016D538 /* Info.plist */,
 				4F2281B521ECE8BB00B08C5B /* MPCommDelegate.h */,
 				4F2281C121EDAC2F00B08C5B /* MPTCPAcceptor.h */,
@@ -178,6 +184,7 @@
 				4F2281C321EDAC2F00B08C5B /* MPTCPAcceptor.h in Headers */,
 				4FDD26C121CBF9B70016D538 /* MPCommLayer.h in Headers */,
 				4F2281B321ECE6CA00B08C5B /* MPUDPSocket.h in Headers */,
+				4FBCCE0221F0B2E800E7BF3C /* MPCommManager.h in Headers */,
 				4F2281B621ECE8BB00B08C5B /* MPCommDelegate.h in Headers */,
 				4F2281AB21ECE6BF00B08C5B /* MPTCPSocket.h in Headers */,
 			);
@@ -303,6 +310,7 @@
 				4F2281AC21ECE6BF00B08C5B /* MPTCPSocket.mm in Sources */,
 				4F2281B421ECE6CA00B08C5B /* MPUDPSocket.mm in Sources */,
 				4F2281C421EDAC2F00B08C5B /* MPTCPAcceptor.mm in Sources */,
+				4FBCCE0321F0B2E800E7BF3C /* MPCommManager.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
