@@ -42,22 +42,24 @@ using namespace socketkit;
 - (void)setDelegate:(id<MPCommTCPAcceptorDelegate>)delegate {
     __weak typeof(self) weakSelf = self;
     auto eh = [weakSelf](TCPAcceptor *acceptor, TCPAcceptorEvent event) {
-        switch (event) {
-            case socketkit::TCPAcceptorEvent::CanAccept: {
-                if (weakSelf.delegate &&
-                    [weakSelf.delegate respondsToSelector:@selector(acceptor:handleEvent:)]) {
-                    [weakSelf.delegate acceptor:weakSelf handleEvent:MPCommTCPAcceptorEventCanAccept];
+        @autoreleasepool {
+            switch (event) {
+                case socketkit::TCPAcceptorEvent::CanAccept: {
+                    if (weakSelf.delegate &&
+                        [weakSelf.delegate respondsToSelector:@selector(acceptor:handleEvent:)]) {
+                        [weakSelf.delegate acceptor:weakSelf handleEvent:MPCommTCPAcceptorEventCanAccept];
+                    }
                 }
-            }
-                break;
-            case socketkit::TCPAcceptorEvent::Error: {
-                if (weakSelf.delegate &&
-                    [weakSelf.delegate respondsToSelector:@selector(acceptor:handleEvent:)]) {
-                    [weakSelf.delegate acceptor:weakSelf handleEvent:MPCommTCPAcceptorEventError];
+                    break;
+                case socketkit::TCPAcceptorEvent::Error: {
+                    if (weakSelf.delegate &&
+                        [weakSelf.delegate respondsToSelector:@selector(acceptor:handleEvent:)]) {
+                        [weakSelf.delegate acceptor:weakSelf handleEvent:MPCommTCPAcceptorEventError];
+                    }
                 }
+                default:
+                    break;
             }
-            default:
-                break;
         }
     };
     _acceptor->mEventHandler = eh;
@@ -76,12 +78,14 @@ using namespace socketkit;
 - (void)accept {
     __weak typeof(self) weakSelf = self;
     auto acceptHandle = [weakSelf](TCPAcceptor *acceptor, std::shared_ptr<TCPSocket> socket) {
-        if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(acceptor:didAcceptSocket:)]) {
-            NSString *domainString = [[NSString alloc] initWithCString:socket->connectingEndpoint()->getEndpointDomain().c_str() encoding:NSUTF8StringEncoding];
-            
-            MPTCPSocket *s = [[MPTCPSocket alloc] initWithSocketFd:socket->getSocketFd() endpointDomain:domainString endpointPort:socket->connectingEndpoint()->getEndpointPort()];
-            
-            [weakSelf.delegate acceptor:weakSelf didAcceptSocket:s];
+        @autoreleasepool {
+            if (weakSelf.delegate && [weakSelf.delegate respondsToSelector:@selector(acceptor:didAcceptSocket:)]) {
+                NSString *domainString = [[NSString alloc] initWithCString:socket->connectingEndpoint()->getEndpointDomain().c_str() encoding:NSUTF8StringEncoding];
+                
+                MPTCPSocket *s = [[MPTCPSocket alloc] initWithSocketFd:socket->getSocketFd() endpointDomain:domainString endpointPort:socket->connectingEndpoint()->getEndpointPort()];
+                
+                [weakSelf.delegate acceptor:weakSelf didAcceptSocket:s];
+            }
         }
     };
     _acceptor->accept(acceptHandle);

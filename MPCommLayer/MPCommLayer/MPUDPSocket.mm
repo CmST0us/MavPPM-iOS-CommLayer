@@ -47,23 +47,25 @@ using namespace socketkit;
     _delegate = delegate;
     __weak typeof(self) weakSelf = self;
     auto eh = [weakSelf](ICommunicator *communicator, CommunicatorEvent event) {
-        switch (event) {
-            case socketkit::CommunicatorEvent::HasBytesAvailable: {
-                if (weakSelf.delegate &&
-                    [weakSelf.delegate respondsToSelector:@selector(communicator:handleEvent:)]) {
-                    [weakSelf.delegate communicator:weakSelf handleEvent:MPCommEventHasBytesAvailable];
+        @autoreleasepool {
+            switch (event) {
+                case socketkit::CommunicatorEvent::HasBytesAvailable: {
+                    if (weakSelf.delegate &&
+                        [weakSelf.delegate respondsToSelector:@selector(communicator:handleEvent:)]) {
+                        [weakSelf.delegate communicator:weakSelf handleEvent:MPCommEventHasBytesAvailable];
+                    }
                 }
-            }
-                break;
-            case socketkit::CommunicatorEvent::ErrorOccurred: {
-                if (weakSelf.delegate &&
-                    [weakSelf.delegate respondsToSelector:@selector(communicator:handleEvent:)]) {
-                    [weakSelf.delegate communicator:weakSelf handleEvent:MPCommEventErrorOccurred];
+                    break;
+                case socketkit::CommunicatorEvent::ErrorOccurred: {
+                    if (weakSelf.delegate &&
+                        [weakSelf.delegate respondsToSelector:@selector(communicator:handleEvent:)]) {
+                        [weakSelf.delegate communicator:weakSelf handleEvent:MPCommEventErrorOccurred];
+                    }
                 }
+                    break;
+                default:
+                    break;
             }
-                break;
-            default:
-                break;
         }
     };
     _socket->mEventHandler = eh;
@@ -85,11 +87,13 @@ using namespace socketkit;
 - (void)read {
     __weak typeof(self) weakSelf = self;
     _socket->read([weakSelf](ICommunicator *communicator, std::shared_ptr<utils::Data> readData) {
-        if (weakSelf.delegate &&
-            [weakSelf.delegate respondsToSelector:@selector(communicator:didReadData:)]) {
-            if (readData->getDataSize() > 0) {
-                NSData *data = [[NSData alloc] initWithBytes:(const void *)readData->getDataAddress() length:readData->getDataSize()];
-                [weakSelf.delegate communicator:weakSelf didReadData:data];
+        @autoreleasepool {
+            if (weakSelf.delegate &&
+                [weakSelf.delegate respondsToSelector:@selector(communicator:didReadData:)]) {
+                if (readData->getDataSize() > 0) {
+                    NSData *data = [[NSData alloc] initWithBytes:(const void *)readData->getDataAddress() length:readData->getDataSize()];
+                    [weakSelf.delegate communicator:weakSelf didReadData:data];
+                }
             }
         }
     });
