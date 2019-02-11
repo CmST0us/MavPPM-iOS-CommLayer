@@ -40,6 +40,7 @@ using namespace socketkit;
 }
 
 - (void)setDelegate:(id<MPCommTCPAcceptorDelegate>)delegate {
+    _delegate = delegate;
     __weak typeof(self) weakSelf = self;
     auto eh = [weakSelf](TCPAcceptor *acceptor, TCPAcceptorEvent event) {
         @autoreleasepool {
