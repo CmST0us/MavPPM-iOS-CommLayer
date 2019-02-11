@@ -6,14 +6,7 @@
 //  Copyright © 2018 eric3u. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-//! Project version number for MPCommLayer.
-FOUNDATION_EXPORT double MPCommLayerVersionNumber;
-
-//! Project version string for MPCommLayer.
-FOUNDATION_EXPORT const unsigned char MPCommLayerVersionString[];
-
+#import <MPCommLayer/MPTCPAcceptor.h>
 #import <MPCommLayer/MPTCPSocket.h>
 #import <MPCommLayer/MPUDPSocket.h>
 #import <MPCommLayer/MPCommDelegate.h>

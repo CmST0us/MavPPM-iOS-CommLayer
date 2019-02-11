@@ -12,7 +12,7 @@
 		4F2281B321ECE6CA00B08C5B /* MPUDPSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2281B121ECE6CA00B08C5B /* MPUDPSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F2281B421ECE6CA00B08C5B /* MPUDPSocket.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F2281B221ECE6CA00B08C5B /* MPUDPSocket.mm */; };
 		4F2281B621ECE8BB00B08C5B /* MPCommDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2281B521ECE8BB00B08C5B /* MPCommDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4F2281C321EDAC2F00B08C5B /* MPTCPAcceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2281C121EDAC2F00B08C5B /* MPTCPAcceptor.h */; };
+		4F2281C321EDAC2F00B08C5B /* MPTCPAcceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2281C121EDAC2F00B08C5B /* MPTCPAcceptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F2281C421EDAC2F00B08C5B /* MPTCPAcceptor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F2281C221EDAC2F00B08C5B /* MPTCPAcceptor.mm */; };
 		4FBCCE0221F0B2E800E7BF3C /* MPCommManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FBCCE0021F0B2E800E7BF3C /* MPCommManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FBCCE0321F0B2E800E7BF3C /* MPCommManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCCE0121F0B2E800E7BF3C /* MPCommManager.mm */; };
