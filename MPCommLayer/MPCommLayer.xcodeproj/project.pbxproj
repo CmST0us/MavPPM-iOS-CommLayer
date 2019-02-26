@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F0CC9C02225B6290091FB0D /* libSocketKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDD271221CCCBB70016D538 /* libSocketKit.a */; };
 		4F2281AB21ECE6BF00B08C5B /* MPTCPSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2281A921ECE6BF00B08C5B /* MPTCPSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F2281AC21ECE6BF00B08C5B /* MPTCPSocket.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F2281AA21ECE6BF00B08C5B /* MPTCPSocket.mm */; };
 		4F2281B321ECE6CA00B08C5B /* MPUDPSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2281B121ECE6CA00B08C5B /* MPUDPSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -16,7 +17,6 @@
 		4F2281C421EDAC2F00B08C5B /* MPTCPAcceptor.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F2281C221EDAC2F00B08C5B /* MPTCPAcceptor.mm */; };
 		4FBCCE0221F0B2E800E7BF3C /* MPCommManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FBCCE0021F0B2E800E7BF3C /* MPCommManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FBCCE0321F0B2E800E7BF3C /* MPCommManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4FBCCE0121F0B2E800E7BF3C /* MPCommManager.mm */; };
-		4FBCCE0B21F20D8100E7BF3C /* libSocketKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDD271221CCCBB70016D538 /* libSocketKit.a */; };
 		4FDD26C121CBF9B70016D538 /* MPCommLayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FDD26BF21CBF9B70016D538 /* MPCommLayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4FDD26E421CC06790016D538 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD26E321CC06790016D538 /* AppDelegate.m */; };
 		4FDD26E721CC06790016D538 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD26E621CC06790016D538 /* ViewController.m */; };
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FBCCE0B21F20D8100E7BF3C /* libSocketKit.a in Frameworks */,
+				4F0CC9C02225B6290091FB0D /* libSocketKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +483,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/../../Vendor/build/include";
+				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/../../Vendor/SocketKit/include";
 				INFOPLIST_FILE = MPCommLayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -511,7 +511,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/../../Vendor/build/include";
+				HEADER_SEARCH_PATHS = "${PROJECT_DIR}/../../Vendor/SocketKit/include";
 				INFOPLIST_FILE = MPCommLayer/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
