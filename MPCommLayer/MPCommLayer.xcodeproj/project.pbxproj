@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F0CC9C02225B6290091FB0D /* libSocketKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDD271221CCCBB70016D538 /* libSocketKit.a */; };
+		4F0CC9C6222664530091FB0D /* libSocketKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDD271221CCCBB70016D538 /* libSocketKit.a */; };
 		4F2281AB21ECE6BF00B08C5B /* MPTCPSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2281A921ECE6BF00B08C5B /* MPTCPSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F2281AC21ECE6BF00B08C5B /* MPTCPSocket.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F2281AA21ECE6BF00B08C5B /* MPTCPSocket.mm */; };
 		4F2281B321ECE6CA00B08C5B /* MPUDPSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2281B121ECE6CA00B08C5B /* MPUDPSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F0CC9C02225B6290091FB0D /* libSocketKit.a in Frameworks */,
+				4F0CC9C6222664530091FB0D /* libSocketKit.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
